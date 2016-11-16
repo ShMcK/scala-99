@@ -38,3 +38,24 @@ class SecondLastSuite extends FunSuite {
     }
   }
 }
+
+class NthElementSuite extends FunSuite {
+  test("find the Nth element of a list") {
+    val x = List(1, 2, 3, 4, 5)
+    assert(nth(2, x) == 3)
+  }
+}
+
+class LengthSuite extends FunSuite {
+  test("find the length of a list") {
+    val x = List(10, 20, 30, 40, 50)
+    assert(length(x) == 5)
+  }
+}
+
+class ReverseSuite extends FunSuite {
+  test("reverse a list") {
+    val x = List(1, 2, 3, 4, 5)
+    assert(reverse(x) == List(5, 4, 3, 2, 1))
+  }
+}
