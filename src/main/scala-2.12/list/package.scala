@@ -29,4 +29,15 @@ package object list {
     case h => List(h)
   }
 
+  // 08
+  def compress[A](x: List[A]): List[A] = x.foldLeft(List[A]()) {
+    case (res, next)
+      if res.isEmpty || res.last != next =>
+        res ::: List(next)
+    case (res, next) => res
+  }
+
+  // 09
+
+
 }

@@ -89,3 +89,11 @@ class FlattenSuite extends FunSuite {
     assert(result == expected)
   }
 }
+
+class CompressSuite extends FunSuite {
+  test("compress removes consecutive duplicates") {
+    val x = List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e)
+    val expected = List('a, 'b, 'c, 'a, 'd, 'e)
+    assert(compress(x) == expected)
+  }
+}
