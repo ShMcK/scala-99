@@ -59,3 +59,33 @@ class ReverseSuite extends FunSuite {
     assert(reverse(x) == List(5, 4, 3, 2, 1))
   }
 }
+
+class PalindromeSuite extends FunSuite {
+  test("returns true for odd palindromes") {
+    val x = List(1, 2, 3, 2, 1)
+    assert(isPalindrome(x))
+  }
+
+  test("returns true for even palindromes") {
+    val x = List(1, 2, 2, 1)
+    assert(isPalindrome(x))
+  }
+
+  test("returns true for single item lists") {
+    val x = List(1)
+    assert(isPalindrome(x))
+  }
+
+  test("returns false for non-palindromes") {
+    val x = List(2, 3, 1)
+    assert(!isPalindrome(x))
+  }
+}
+
+class FlattenSuite extends FunSuite {
+  test("flattens a nested List") {
+    val result = flatten(List(List(1, 1), 2, List(3, List(5, 8))))
+    val expected = List(1, 1, 2, 3, 5, 8)
+    assert(result == expected)
+  }
+}
