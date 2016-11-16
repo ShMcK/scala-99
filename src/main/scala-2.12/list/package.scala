@@ -38,6 +38,14 @@ package object list {
   }
 
   // 09
-
+  def pack[A](x: List[A]): List[List[A]] = x.foldLeft(List[List[A]]()) {
+    // first item
+    case (res, next) if res.isEmpty => List(List(next))
+      // matches next
+    case (res, next)
+      if res.last.last == next => res.init :+ (res.last ::: List(next))
+      // no match
+    case (res, next) => res :+ List(next)
+  }
 
 }
