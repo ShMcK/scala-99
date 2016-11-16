@@ -1,8 +1,8 @@
 package list
 
 import org.scalatest.FunSuite
-// import java.util.NoSuchElementException
 
+// 01
 class LastSuite extends FunSuite {
 
   test("last gets last item from list") {
@@ -18,6 +18,7 @@ class LastSuite extends FunSuite {
   }
 }
 
+// 02
 class SecondLastSuite extends FunSuite {
   test("secondLast gets second last item from list") {
     val x = List(1, 2, 3, 4, 5)
@@ -39,6 +40,7 @@ class SecondLastSuite extends FunSuite {
   }
 }
 
+// 03
 class NthElementSuite extends FunSuite {
   test("find the Nth element of a list") {
     val x = List(1, 2, 3, 4, 5)
@@ -46,6 +48,8 @@ class NthElementSuite extends FunSuite {
   }
 }
 
+
+// 04
 class LengthSuite extends FunSuite {
   test("find the length of a list") {
     val x = List(10, 20, 30, 40, 50)
@@ -53,6 +57,7 @@ class LengthSuite extends FunSuite {
   }
 }
 
+// 05
 class ReverseSuite extends FunSuite {
   test("reverse a list") {
     val x = List(1, 2, 3, 4, 5)
@@ -60,6 +65,8 @@ class ReverseSuite extends FunSuite {
   }
 }
 
+
+// 06
 class PalindromeSuite extends FunSuite {
   test("returns true for odd palindromes") {
     val x = List(1, 2, 3, 2, 1)
@@ -82,6 +89,7 @@ class PalindromeSuite extends FunSuite {
   }
 }
 
+// 07
 class FlattenSuite extends FunSuite {
   test("flattens a nested List") {
     val result = flatten(List(List(1, 1), 2, List(3, List(5, 8))))
@@ -90,6 +98,7 @@ class FlattenSuite extends FunSuite {
   }
 }
 
+// 08
 class CompressSuite extends FunSuite {
   test("compress removes consecutive duplicates") {
     val x = List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e)
@@ -98,10 +107,20 @@ class CompressSuite extends FunSuite {
   }
 }
 
+// 09
 class PackSuite extends FunSuite {
   test("pack puts repeated elements into inner lists") {
     val result = pack(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e))
     val expected = List(List('a, 'a, 'a, 'a), List('b), List('c, 'c), List('a, 'a), List('d), List('e, 'e, 'e, 'e))
-    assert(result === expected)
+    assert(result == expected)
+  }
+}
+
+// 10
+class EncodeSuite extends FunSuite {
+  test("encode changes list to tuple of count and value") {
+    val result = encode(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e))
+    val expected = List((4,'a), (1,'b), (2,'c), (2,'a), (1,'d), (4,'e))
+    assert(result == expected)
   }
 }

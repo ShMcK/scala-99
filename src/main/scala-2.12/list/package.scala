@@ -48,4 +48,9 @@ package object list {
     case (res, next) => res :+ List(next)
   }
 
+  // 10
+  def encode[A](x: List[A]): List[(Int, A)] = {
+    pack(x).map(xl => (xl.length, xl.head))
+  }
+
 }
