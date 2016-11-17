@@ -256,3 +256,15 @@ class LottoSuite extends FunSuite {
   }
 }
 
+// 25
+class RandomPermute extends FunSuite {
+  test("generate a random permutation of the elements of a list") {
+    val list = List('a, 'b, 'c, 'd, 'e, 'f)
+    val result: List[Symbol] = randomPermute(list)
+    assert(result.length == list.length)
+    // has all elements
+    for (i <- 0 until list.length) {
+      assert(result.contains(list(i)))
+    }
+  }
+}

@@ -170,4 +170,9 @@ package object list {
     _lotto(n, List())
   }
 
+  // 25
+  def randomPermute[A](list: List[A]): List[A] = {
+    scala.util.Random.shuffle(list)
+  }
+  
 }
