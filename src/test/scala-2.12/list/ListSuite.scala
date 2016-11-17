@@ -220,3 +220,13 @@ class RemoveAtSuite extends FunSuite {
     assert(result == expected)
   }
 }
+
+// 21
+class InsertAtSuite extends FunSuite {
+  test("insert an element at a given position into a list") {
+    val result = insertAt('new, 1, List('a, 'b, 'c, 'd))
+    val expected = List('a, 'new, 'b, 'c, 'd)
+    assert(result == expected)
+  }
+}
+

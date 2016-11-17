@@ -128,4 +128,9 @@ package object list {
     (x.slice(0, n) ::: x.slice(n + 1, x.length), x(n))
   }
 
+  // 21
+  def insertAt[A](item: A, n: Int, x: List[A]): List[A] = {
+    x.slice(0, n) ::: List(item) ::: x.slice(n, x.length)
+  }
+
 }
