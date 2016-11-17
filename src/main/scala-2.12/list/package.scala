@@ -98,4 +98,12 @@ package object list {
     x.foldLeft(List[A]())((res: List[A], next) => res ::: List.fill(n)(next))
   }
 
+  // 16
+  def dropN[A](n: Int, x: List[A]): List[A] = {
+    x.zipWithIndex.collect {
+      // remove every 3rd element
+      case (e,i) if i % 3 != 2 => e
+    }
+  }
+
 }

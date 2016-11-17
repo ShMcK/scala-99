@@ -169,3 +169,12 @@ class DuplicateNSuite extends FunSuite {
     assert(result == expected)
   }
 }
+
+// 16
+class DropNSuite extends FunSuite {
+  test("drop every Nth element from a list") {
+    val result = dropN(3, List('a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i, 'j, 'k))
+    val expected = List('a, 'b, 'd, 'e, 'g, 'h, 'j, 'k)
+    assert(result == expected)
+  }
+}
