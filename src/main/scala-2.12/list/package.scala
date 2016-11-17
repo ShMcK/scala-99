@@ -116,4 +116,11 @@ package object list {
     x.slice(start, end)
   }
 
+  // 19
+  def rotate[A](shift: Int, x: List[A]): List[A] = shift match {
+    case 0 => x
+    case a if a < 0 => rotate(shift + 1, x.last :: x.init)
+    case a if a > 0 => rotate(shift - 1, x.tail :+ x.head)
+  }
+
 }

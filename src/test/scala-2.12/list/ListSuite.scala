@@ -196,3 +196,18 @@ class SliceSuite extends FunSuite {
     assert(result == expected)
   }
 }
+
+// 19
+class RotateSuite extends FunSuite {
+  test("rotate a list N places to the right") {
+    val result = rotate(3, List('a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i, 'j, 'k))
+    val expected = List('d, 'e, 'f, 'g, 'h, 'i, 'j, 'k, 'a, 'b, 'c)
+    assert(result == expected)
+  }
+
+  test("rotate a list N places to the left") {
+    val result = rotate(-2, List('a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i, 'j, 'k))
+    val expected = List('j, 'k, 'a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i)
+    assert(result == expected)
+  }
+}
