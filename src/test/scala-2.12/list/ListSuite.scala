@@ -124,3 +124,12 @@ class EncodeSuite extends FunSuite {
     assert(result == expected)
   }
 }
+
+// 11
+class EncodeModifiedSuite extends FunSuite {
+  test("encode but leave items without duplicates as single values") {
+    val expected = encodeModified(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e))
+    val result = List((4,'a), 'b, (2,'c), (2,'a), 'd, (4,'e))
+    assert(result == expected)
+  }
+}

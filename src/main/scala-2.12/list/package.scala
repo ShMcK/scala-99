@@ -1,6 +1,3 @@
-
-import java.util.NoSuchElementException
-
 package object list {
 
   // 01
@@ -52,5 +49,17 @@ package object list {
   def encode[A](x: List[A]): List[(Int, A)] = {
     pack(x).map(xl => (xl.length, xl.head))
   }
+
+  // 11
+  def encodeModified[A](x: List[A]): List[Any] = {
+    pack(x) map {
+      xl => xl match {
+        case xl if xl.length > 1 => (xl.length, xl.head)
+        case xl => xl.head
+      }
+    }
+  }
+  // Would like output type to be List[(Int, A) ∈ A]
+  // Not sure how to implement Union types in Scala
 
 }
