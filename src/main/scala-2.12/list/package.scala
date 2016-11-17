@@ -67,4 +67,25 @@ package object list {
     x.foldLeft(List[A]())((res, next: (Int, A)) => res ::: List.fill(next._1)(next._2))
   }
 
+  // 13
+  def encodeDirect[A](x: List[A]): List[(Int, A)] = {
+    def _encodeDirectFirst[A](res: List[(Int, A)], rem: List[A]): List[(Int, A)] = {
+      rem match {
+        case Nil => res
+        case _ => _encodeDirectNext(res ::: List((1, rem.head)), rem.tail, rem.head)
+      }
+    }
+    def _encodeDirectNext[A](res: List[(Int, A)], rem: List[A], prev: A): List[(Int, A)] = {
+      rem match {
+        case Nil => res
+        case _ if rem.head == prev => _encodeDirectNext(res.init ::: List((res.last._1 + 1, res.last._2)), rem.tail, rem.head)
+        case _ => _encodeDirectNext(res ::: List((1, rem.head)), rem.tail, rem.head)
+      }
+    }
+    _encodeDirectFirst(List(), x)
+  }
+  // would like to use one method,
+  // but not sure how to handle "prev" param value
+  // while maintaining type of A rather than Any
+
 }
