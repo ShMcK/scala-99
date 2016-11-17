@@ -93,4 +93,9 @@ package object list {
     x.foldLeft(List[A]())((res: List[A], next) => res ::: List(next, next))
   }
 
+  // 15
+  def duplicateN[A](n: Int, x: List[A]): List[A] = {
+    x.foldLeft(List[A]())((res: List[A], next) => res ::: List.fill(n)(next))
+  }
+
 }

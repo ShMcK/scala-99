@@ -160,3 +160,12 @@ class DuplicateSuite extends FunSuite {
     assert(result == expected)
   }
 }
+
+// 15
+class DuplicateNSuite extends FunSuite {
+  test("duplicate the elements of a list a given number of times") {
+    val result = duplicateN(3, List('a, 'b, 'c, 'c, 'd))
+    val expected = List('a, 'a, 'a, 'b, 'b, 'b, 'c, 'c, 'c, 'c, 'c, 'c, 'd, 'd, 'd)
+    assert(result == expected)
+  }
+}
