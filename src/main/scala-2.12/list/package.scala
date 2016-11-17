@@ -1,3 +1,5 @@
+import java.util.Random
+
 package object list {
 
   // 01
@@ -144,6 +146,10 @@ package object list {
   // more difficult as "start to end" produces a type of Range
   // while the solution requires a type of Int
 
-  
+  // 23
+  def randomSelect[A](n: Int, x: List[A]): List[A] = {
+    if (x.length <= n) x
+    else randomSelect(n, removeAt(new scala.util.Random().nextInt(x.length), x)._1)
+  }
 
 }

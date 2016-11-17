@@ -238,3 +238,12 @@ class RangeSuite extends FunSuite {
     assert(result == expected)
   }
 }
+
+// 23
+class RandomSelect extends FunSuite {
+  test("extract a given number of randomly selected elements from a list") {
+    val result = randomSelect(3, List('a, 'b, 'c, 'd, 'f, 'g, 'h))
+    assert(result.length == 3)
+  }
+}
+
