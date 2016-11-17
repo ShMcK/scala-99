@@ -178,3 +178,12 @@ class DropNSuite extends FunSuite {
     assert(result == expected)
   }
 }
+
+// 17
+class Split extends FunSuite {
+  test("split a list into two parts") {
+    val result = split(3, List('a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i, 'j, 'k))
+    val expected = (List('a, 'b, 'c),List('d, 'e, 'f, 'g, 'h, 'i, 'j, 'k))
+    assert(result == expected)
+  }
+}

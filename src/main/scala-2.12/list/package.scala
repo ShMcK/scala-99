@@ -106,4 +106,9 @@ package object list {
     }
   }
 
+  // 17
+  def split[A](n: Int, x: List[A]): (List[A], List[A]) = {
+    (x.slice(0, n), x.slice(n, x.length))
+  }
+
 }
