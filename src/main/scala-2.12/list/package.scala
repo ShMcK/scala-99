@@ -1,5 +1,7 @@
 import java.util.Random
 
+import scala.annotation.tailrec
+
 package object list {
 
   // 01
@@ -77,6 +79,7 @@ package object list {
         case _ => _encodeDirectNext(res ::: List((1, rem.head)), rem.tail, rem.head)
       }
     }
+    @tailrec
     def _encodeDirectNext[A](res: List[(Int, A)], rem: List[A], prev: A): List[(Int, A)] = {
       rem match {
         case Nil => res
@@ -146,10 +149,25 @@ package object list {
   // more difficult as "start to end" produces a type of Range
   // while the solution requires a type of Int
 
+  def randomInt(max: Int): Int = {
+    new scala.util.Random().nextInt(max)
+  }
+
   // 23
+  @tailrec
   def randomSelect[A](n: Int, x: List[A]): List[A] = {
     if (x.length <= n) x
-    else randomSelect(n, removeAt(new scala.util.Random().nextInt(x.length), x)._1)
+    else randomSelect(n, removeAt(randomInt(x.length), x)._1)
+  }
+
+  // 24
+  def lotto(n: Int, max: Int): List[Int] = {
+    @tailrec
+    def _lotto(i: Int, list: List[Int]): List[Int] = {
+      if (i <= 0) list
+      else _lotto(i - 1, list :+ randomInt(max))
+    }
+    _lotto(n, List())
   }
 
 }

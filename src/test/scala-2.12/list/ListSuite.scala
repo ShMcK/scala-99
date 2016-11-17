@@ -240,10 +240,19 @@ class RangeSuite extends FunSuite {
 }
 
 // 23
-class RandomSelect extends FunSuite {
+class RandomSelectSuite extends FunSuite {
   test("extract a given number of randomly selected elements from a list") {
     val result = randomSelect(3, List('a, 'b, 'c, 'd, 'f, 'g, 'h))
     assert(result.length == 3)
+  }
+}
+
+// 24
+class LottoSuite extends FunSuite {
+  test("draw N different random numbers from the set 1..M") {
+    val result: List[Int] = lotto(6, 49)
+    assert(result.length == 6)
+    assert(result.count(_ <= 49) == result.length)
   }
 }
 
