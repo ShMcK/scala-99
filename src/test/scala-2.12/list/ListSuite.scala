@@ -143,10 +143,20 @@ class DecodeSuite extends FunSuite {
   }
 }
 
+// 13
 class EncodeDirectSuite extends FunSuite {
   test("encodeDirect, encode a string without using pack") {
     val result = encodeDirect(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e))
     val expected = List((4,'a), (1,'b), (2,'c), (2,'a), (1,'d), (4,'e))
+    assert(result == expected)
+  }
+}
+
+// 14
+class DuplicateSuite extends FunSuite {
+  test("duplicate doubles items in the list") {
+    val result = duplicate(List('a, 'b, 'c, 'c, 'd))
+    val expected = List('a, 'a, 'b, 'b, 'c, 'c, 'c, 'c, 'd, 'd)
     assert(result == expected)
   }
 }

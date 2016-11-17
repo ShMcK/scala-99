@@ -88,4 +88,9 @@ package object list {
   // but not sure how to handle "prev" param value
   // while maintaining type of A rather than Any
 
+  // 14
+  def duplicate[A](x: List[A]): List[A] = {
+    x.foldLeft(List[A]())((res: List[A], next) => res ::: List(next, next))
+  }
+
 }
