@@ -180,10 +180,19 @@ class DropNSuite extends FunSuite {
 }
 
 // 17
-class Split extends FunSuite {
+class SplitSuite extends FunSuite {
   test("split a list into two parts") {
     val result = split(3, List('a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i, 'j, 'k))
     val expected = (List('a, 'b, 'c),List('d, 'e, 'f, 'g, 'h, 'i, 'j, 'k))
+    assert(result == expected)
+  }
+}
+
+// 18
+class SliceSuite extends FunSuite {
+  test("extract a slice from a list") {
+    val result = slice(3, 7, List('a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i, 'j, 'k))
+    val expected = List('d, 'e, 'f, 'g)
     assert(result == expected)
   }
 }

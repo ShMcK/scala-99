@@ -111,4 +111,9 @@ package object list {
     (x.slice(0, n), x.slice(n, x.length))
   }
 
+  // 18
+  def slice[A](start: Int, end: Int, x: List[A]): List[A] = {
+    x.slice(start, end)
+  }
+
 }
