@@ -133,3 +133,12 @@ class EncodeModifiedSuite extends FunSuite {
     assert(result == expected)
   }
 }
+
+// 12
+class DecodeSuite extends FunSuite {
+  test("decode an encoded list") {
+    val result = decode(List((4, 'a), (1, 'b), (2, 'c), (2, 'a), (1, 'd), (4, 'e)))
+    val expected = List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e)
+    assert(result == expected)
+  }
+}

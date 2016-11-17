@@ -62,4 +62,9 @@ package object list {
   // Would like output type to be List[(Int, A) ∈ A]
   // Not sure how to implement Union types in Scala
 
+  // 12
+  def decode[A](x: List[(Int, A)]): List[A] = {
+    x.foldLeft(List[A]())((res, next: (Int, A)) => res ::: List.fill(next._1)(next._2))
+  }
+
 }
