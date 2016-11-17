@@ -230,3 +230,11 @@ class InsertAtSuite extends FunSuite {
   }
 }
 
+// 22
+class RangeSuite extends FunSuite {
+  test("create a list containing all integers within a given range") {
+    val result = range(4, 9)
+    val expected = List(4, 5, 6, 7, 8, 9)
+    assert(result == expected)
+  }
+}

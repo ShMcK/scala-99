@@ -133,4 +133,17 @@ package object list {
     x.slice(0, n) ::: List(item) ::: x.slice(n, x.length)
   }
 
+  // 22
+  def range(start: Int, end: Int): List[Int] = {
+    var res: List[Int] = List()
+    for (i <- start to end) {
+      res = res :+ i
+    }
+    res
+  }
+  // more difficult as "start to end" produces a type of Range
+  // while the solution requires a type of Int
+
+  
+
 }
