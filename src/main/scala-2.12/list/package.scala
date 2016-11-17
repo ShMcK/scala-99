@@ -123,4 +123,9 @@ package object list {
     case a if a > 0 => rotate(shift - 1, x.tail :+ x.head)
   }
 
+  // 20
+  def removeAt[A](n: Int, x: List[A]): (List[A], A) = {
+    (x.slice(0, n) ::: x.slice(n + 1, x.length), x(n))
+  }
+
 }

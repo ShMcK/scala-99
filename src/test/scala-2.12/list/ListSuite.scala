@@ -211,3 +211,12 @@ class RotateSuite extends FunSuite {
     assert(result == expected)
   }
 }
+
+// 20
+class RemoveAtSuite extends FunSuite {
+  test("remove the Kth element from a list") {
+    val result = removeAt(1, List('a, 'b, 'c, 'd))
+    val expected = (List('a, 'c, 'd),'b)
+    assert(result == expected)
+  }
+}
